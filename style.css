@@ -1,0 +1,35 @@
+body {
+  background: #121212;
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+input, button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 300px;
+}
+button {
+  background: #00b4ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+#nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #1e1e1e;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}

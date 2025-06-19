@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClipChat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="auth-container">
+    <h1>ClipChat</h1>
+    <input type="text" id="username" placeholder="Username">
+    <input type="text" id="bio" placeholder="Bio">
+    <input type="file" id="profile-pic" accept="image/*">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login</button>
+    <p id="message"></p>
+  </div>
+
+  <div id="app-container" class="hidden">
+    <div id="nav">
+      <button onclick="showPage('feed')">🏠</button>
+      <button onclick="showPage('upload')">📤</button>
+      <button onclick="showPage('friends')">👥</button>
+      <button onclick="showPage('messages')">💬</button>
+      <button onclick="logout()">🚪</button>
+    </div>
+
+    <div id="feed" class="page">Feed</div>
+    <div id="upload" class="page hidden">
+      <input type="file" id="video-upload" accept="video/*">
+      <button onclick="uploadClip()">Upload Clip</button>
+    </div>
+    <div id="friends" class="page hidden">Friends</div>
+    <div id="messages" class="page hidden">Messages</div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
