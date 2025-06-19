@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClipChat - Full Edition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>ClipChat</h1>
+
+    <div id="auth-section">
+      <input type="text" id="username" placeholder="Username" />
+      <input type="text" id="bio" placeholder="Bio (max 150 chars)" maxlength="150"/>
+      <input type="file" id="profilePic" accept="image/*"/>
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="register()">Register</button>
+      <button onclick="login()">Login</button>
+      <p id="auth-msg"></p>
+    </div>
+
+    <div id="app-section" class="hidden">
+      <div class="profile">
+        <img id="user-pic" src="" alt="Profile Pic" />
+        <h2 id="user-name"></h2>
+        <p id="user-bio"></p>
+        <button onclick="logout()">Logout</button>
+      </div>
+
+      <input type="file" id="videoFile" accept="video/*" />
+      <button onclick="uploadClip()">Upload Clip</button>
+
+      <div id="videoFeed"></div>
+
+      <div class="bottom-nav">
+        <button onclick="loadClips()">🏠 Home</button>
+        <button onclick="document.getElementById('videoFile').click()">📤 Upload</button>
+        <button onclick="openFriends()">👥 Friends</button>
+        <button onclick="openMessages()">💬 Messages</button>
+        <button onclick="logout()">🚪 Logout</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyB6KYjHAAbELcEKwstgh1AZb2abqImsb5g",
+      authDomain: "worktracker-b6e6a.firebaseapp.com",
+      projectId: "worktracker-b6e6a",
+      storageBucket: "worktracker-b6e6a.appspot.com",
+      messagingSenderId: "769755385406",
+      appId: "1:769755385406:web:4b5b17781c973d259c4b6f"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
