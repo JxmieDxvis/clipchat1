@@ -1,1 +1,0 @@
-// PRODUCTION: Firebase-wired logic for auth, upload, friends, messaging
